@@ -27,6 +27,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 //app.use(express.static(__dirname + '/public'));
 //global.appRoot = path.resolve(__dirname);
-require("./app/app.js")(app);
+//require("./app/app.js")(app);
+
+require('./app/services/user/user.service.server.js')(app);
+require('./app/services/driver/driver.service.server.js')(app);
+
+
+
 app.listen(port);
 console.log("App listening on port : " + port);
